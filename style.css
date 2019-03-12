@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css?family=Merienda');
+
+
+body{
+	background-image: url("home.jpg");
+	background-size: cover;
+
+}
+
+.head{
+	position: relative;
+	text-align: center;
+	margin-top: 8%;
+	font-size: 72px;
+	color: white;
+	font-family: 'Merienda', cursive;
+
+}
+
+.container{
+	margin-top: 29%;
+	text-align: center;
+}	
+
+.btn{
+	width: 180px;
+	height: 50px;
+	background-color: transparent;
+	font-size: 18px;
+	color: #fff;
+	font-weight: bold;
+		font-family: 'Merienda', cursive;
+		border: 1px solid #fff;
+}
+.btn:hover{
+	background: linear-gradient(to bottom right,transparent,black);
+	font-size: 22px;
+
+}
+
+.btn:focus{
+	position: relative;
+	top: 2px;
+}
+
+.link{
+	font-size: 18px;
+	color: #fff;
+	text-decoration: none;
+}
+
+
