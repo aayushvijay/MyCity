@@ -102,8 +102,8 @@
 				<div class="row">
 			
 			<form class="example"><div class="div-search">
-  <input type="text" placeholder="Search for restaurants, theatres, cafes & hangout Places etc..." name="search" class="search1">
-  <button type="submit" class="searchbar">Search</button></div><br><br><br><br><br><br>
+  <input type="text" placeholder="Search for restaurants, theatres, cafes & hangout Places etc..." id="place1" name="search" class="search1">
+  <button type="submit" class="searchbar"> Search</button></div><br><br><br><br><br><br>
 </form>
 					
 				
@@ -123,7 +123,6 @@
 var map;
 var service;
 var infowindow;
-
 function initialize() {
   var vellore =  {lat: 12.9165, lng: 79.1325};
 
@@ -145,8 +144,10 @@ function initialize() {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-      var place = results[i];
-      createMarker(results[i].geometry.location);
+	  var place = results[i];
+	  console.log(place.name);
+
+	  createMarker(results[i].geometry.location);
     }
   }
 }  function createMarker(position) {
