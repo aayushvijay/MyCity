@@ -12,10 +12,7 @@
 		<meta name="keywords" content="" />
 		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
+    
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -93,6 +90,11 @@
 			
 			</div>
 		</div>
+		<section class="our-location">
+			<div class="container">
+			  <div id="googleMap"></div>
+			</div>
+		  </section>
 	<!-- Main -->
 	<!-- Copyright -->
 		<div id="copyright">
@@ -100,6 +102,23 @@
 				Designed by:<br> Aayush Vijay, Yash Rastogi, Tanya Jaiswal, Shubhankar Pradhan.
 			</div>
 		</div>
-
+		<script>
+      var map;
+      function initMap() {
+				var vellore =  {lat: 12.9165, lng: 79.1325};
+        map = new google.maps.Map(document.getElementById('googleMap'), {
+          center: vellore,
+          zoom: 10
+				});
+				var marker = new google.maps.Marker({position: vellore, map:map});
+      }
+		</script>
+		<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWdEyvaTBGaNh2mqZUiMula5GG2iZWAxg&callback=initMap"
+    async defer></script>
+		<!---<script src="js/scripts.js"></script>-->
+		<script src="js/init.js"></script>
 	</body>
 </html>

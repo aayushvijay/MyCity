@@ -12,10 +12,7 @@
 		<meta name="keywords" content="" />
 		<link href='http://fonts.googleapis.com/css?family=Oxygen:400,300,700' rel='stylesheet' type='text/css'>
 		<!--[if lte IE 8]><script src="js/html5shiv.js"></script><![endif]-->
-        <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-panels.min.js"></script>
-		<script src="js/init.js"></script>
+        
 		<noscript>
 			<link rel="stylesheet" href="css/skel-noscript.css" />
 			<link rel="stylesheet" href="css/style.css" />
@@ -111,10 +108,59 @@
 			
 			</div>
 		</div>
+		<section class="our-location">
+			<div class="container">
+			  <div id="googleMap"></div>
+			</div>
+		  </section>
 	<!-- Main -->
+<script>
+var map;
+var service;
+var infowindow;
 
+function initialize() {
+  var vellore =  {lat: 12.9165, lng: 79.1325};
 
-	
+  map = new google.maps.Map(document.getElementById('googleMap'), {
+      center: vellore,
+      zoom: 15
+    });
 
+  var request = {
+    location: vellore,
+    radius: '500',
+    query: 'restaurant'
+  };
+
+  service = new google.maps.places.PlacesService(map);
+  service.textSearch(request, callback);
+}
+
+function callback(results, status) {
+  if (status == google.maps.places.PlacesServiceStatus.OK) {
+    for (var i = 0; i < results.length; i++) {
+      var place = results[i];
+      createMarker(results[i].geometry.location);
+    }
+  }
+}  function createMarker(position) {
+
+	new google.maps.Marker({
+	position: position,
+	map: map
+});
+}
+</script>
+
+	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWdEyvaTBGaNh2mqZUiMula5GG2iZWAxg&callback=initialize&textSearch&google.maps.places.PlacesServiceStatus&libraries=places
+	"
+	async defer></script>
+	<!--<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCWdEyvaTBGaNh2mqZUiMula5GG2iZWAxg&libraries=places"></script>-->
+
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-panels.min.js"></script>
+		<script src="js/init.js"></script>	
 	</body>
 </html>

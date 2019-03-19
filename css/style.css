@@ -335,4 +335,15 @@
 	{
 		text-decoration: none;
 		color: rgba(255,255,255,.3);
-	}		
+	}
+	
+	.our-location {
+		padding: 80px 0;
+	
+	}
+	
+	#googleMap{
+		height: 500px;
+		margin-right: 5%;
+		margin-left: 4%;
+		}
