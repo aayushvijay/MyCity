@@ -146,7 +146,11 @@ function callback(results, status) {
     for (var i = 0; i < results.length; i++) {
 	  var place = results[i];
 	  console.log(place.name);
-
+		if (place.opening_hours == true){
+			console.log('Open now');
+		}
+		else
+		console.log('closed');
 	  createMarker(results[i].geometry.location);
     }
   }
