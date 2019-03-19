@@ -42,12 +42,6 @@
 			<div class="wrap-login100 p-l-50 p-r-50 p-t-72 p-b-50">
 				<h2 class="head2"><a href="home.html">Home</a></h2>
 <?php
-				if (isset($_SESSION['u_id'])) {
-					echo '<form action="includes/logout.inc.php" method="POST">
-                        <button type="submit" name="submit" style="border:1px solid black;width:100px;height:42px;" class="logout">Logout</button>
-                    </form>';
-				}
-				else{
 					echo '<form class="login100-form validate-form" action="includes/login.inc.php" method="POST">
 
 					<span class="login100-form-title p-b-59">
@@ -82,7 +76,7 @@
 						</a>
 					</div>
 				</form>';
-			}
+			
 ?>
 			</div>
 		</div>
