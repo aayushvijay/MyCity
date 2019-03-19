@@ -105,7 +105,9 @@
   <input type="text" placeholder="Search for restaurants, theatres, cafes & hangout Places etc..." id="place1" name="search" class="search1">
   <button type="submit" class="searchbar"> Search</button></div><br><br><br><br><br><br>
 </form>
-					
+<div class="container">
+	<ul id="addto" class="addon"> </ul>
+</div>		
 				
 					
 						
@@ -144,13 +146,20 @@ function initialize() {
 function callback(results, status) {
   if (status == google.maps.places.PlacesServiceStatus.OK) {
     for (var i = 0; i < results.length; i++) {
-	  var place = results[i];
-	  console.log(place.name);
-		if (place.opening_hours == true){
+	  	var place = results[i];
+		var ele= document.createElement('li');
+		var t = document.createTextNode(place.name);
+		ele.appendChild(t);
+		  console.log(place.name);
+		  if (place.opening_hours == true){
 			console.log('Open now');
+			
 		}
 		else
 		console.log('closed');
+		  document.getElementById("addto").appendChild(ele);
+        //document.getElementById("addto").insertBefore(ele,document.getElementById("addto").childNodes[0]);
+		
 	  createMarker(results[i].geometry.location);
     }
   }
@@ -160,6 +169,8 @@ function callback(results, status) {
 	position: position,
 	map: map
 });
+
+
 }
 </script>
 
