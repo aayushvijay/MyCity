@@ -151,14 +151,23 @@
 					  var place = results[i];
 					var ele= document.createElement('li');
 					var t = document.createTextNode(place.name);
+					var line = document.createTextNode(' -\t ');
 					ele.appendChild(t);
+					ele.appendChild(line);
 					  console.log(place.name);
 					  if (place.opening_hours == true){
 						console.log('Open now');
+						var s= "open now";
+						var t1 = document.createTextNode(s);
+						ele.appendChild(t1);
 						
 					}
-					else
+					else{
 					console.log('closed');
+					s= 'Closed';
+					var t1 = document.createTextNode(s);
+						ele.appendChild(t1);
+					}
 					  document.getElementById("addto").appendChild(ele);
 					//document.getElementById("addto").insertBefore(ele,document.getElementById("addto").childNodes[0]);
 					
